@@ -7,14 +7,22 @@
 
     background-color: #F5F5F5;
     span {
-        font-size: 32px;
+        font-size: 28px;
         margin-left: 16px;
         color: #38CFFF;
     }
 
     img {
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
         object-fit: cover;
+    }
+}
+
+.player-active {
+    background-color: #38CFFF;
+    span {
+        color: #F5F5F5 !important;
+
     }
 }
