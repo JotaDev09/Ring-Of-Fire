@@ -19,16 +19,16 @@ export class GameComponent implements OnInit{
 
   ngOnInit(): void {
     this.newGame();
-  } 
+  }
 
   newGame() {
     this.game = new Game();
   }
-  
+
   takeCard() {
     if (!this.pickCardAnimation) {
       const poppedCard = this.game.stack.pop();
-      
+
       if (poppedCard !== undefined) {
         this.currentCard = poppedCard;
         this.pickCardAnimation = true;
@@ -49,7 +49,7 @@ openDialog(): void {
   const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
   dialogRef.afterClosed().subscribe((name: string) => {
-    if(name && name.length > 0) {
+      if(name && name.length > 0) {
       this.game.players.push(name);
     }
   });
