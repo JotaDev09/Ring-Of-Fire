@@ -4,16 +4,17 @@
 <div class="field">
   <div class="card-stack">
     <!-- Card stack-->
-    <img *ngFor="let card of [0,1,2,3]; let i=index" [ngStyle]="{'right.px': i * 5}" src="/assets/cards/card_cover.png"
+    <img *ngFor="let card of stack; let i=index" [ngStyle]="{'right.px': i * 5}" src="assets/cards/card_cover.png"
       class="card_cover">
-    <img (click)="takeCard()" class="top-card card_cover" style="right: 25px;" src="/assets/cards/card_cover.png">
+    <img (click)="takeCard()" class="top-card card_cover" [ngStyle]="{'right.px': topCardStyleRight}"
+      src="assets/cards/card_cover.png">
 
     <!-- Stack for Played cards -->
-    <img *ngFor="let card of game.playedCards" class="played-card" src="/assets/cards/{{ card }}.png">
+    <img *ngFor="let card of game.playedCards" class="played-card" src="assets/cards/{{ card }}.png">
 
     <!-- Current Card-->
-    <img (click)="takeCard()" *ngIf="pickCardAnimation" class="pick-card" style="right: 25px;"
-      src="/assets/cards/{{ currentCard }}.png">
+    <img (click)="takeCard()" *ngIf="pickCardAnimation" class="pick-card" [ngStyle]="{'right.px': topCardStyleRight}"
+      src="assets/cards/{{ currentCard }}.png">
 
   </div>
 </div>

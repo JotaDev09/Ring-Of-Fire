@@ -14,36 +14,56 @@ export class GameComponent implements OnInit{
   pickCardAnimation = false;
   currentCard: string = '';
   game: Game = new Game();
+  stack: string[] = [];
+  topCardStyleRight = 260;
+
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.newGame();
+    const cardNames = this.generateCardNames();
+    this.stack = this.shuffleArray(cardNames);
   }
 
   newGame() {
     this.game = new Game();
   }
 
+  generateCardNames(): string[] {
+    const suits = ["clubs", "diamonds", "hearts", "spades"];
+    const cardNames: string[] = [];
+
+    for (const suit of suits) {
+      for (let i = 1; i <= 13; i++) {
+        cardNames.push(`${suit}_${i}`);
+      }
+    }
+
+    return cardNames;
+  }
+
+
   takeCard() {
-    if (!this.pickCardAnimation) {
-      const poppedCard = this.game.stack.pop();
+    if (!this.pickCardAnimation && this.stack.length > 0) {
+      const poppedCard = this.stack.pop();
 
       if (poppedCard !== undefined) {
         this.currentCard = poppedCard;
         this.pickCardAnimation = true;
-        console.log('New card:' + this.currentCard);
-        console.log('game is', this.game);
 
         this.game.currentPlayer++;
         this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
-      setTimeout(() => {
-        this.game.playedCards.push(this.currentCard);
-        this.pickCardAnimation = false;
-      }, 1500);
+
+        this.topCardStyleRight -= 5;
+        setTimeout(() => {
+          this.game.playedCards.push(this.currentCard);
+          this.pickCardAnimation = false;
+        }, 1500);
+      }
     }
   }
-}
+
 
 openDialog(): void {
   const dialogRef = this.dialog.open(DialogAddPlayerComponent);
@@ -54,5 +74,15 @@ openDialog(): void {
     }
   });
 }
+
+shuffleArray(array: any[]): any[] {
+  const shuffledArray = [...array];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
+}
+
 
 }
