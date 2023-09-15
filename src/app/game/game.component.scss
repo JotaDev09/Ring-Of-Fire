@@ -123,11 +123,6 @@ app-player {
   }
 }
 
-.preloadImage {
-  opacity: 0;
-  z-index: -999999;
-}
-
 @media (width < 700px) {
   .pin-bottom {
     left: 0;
