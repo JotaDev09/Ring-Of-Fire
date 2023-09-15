@@ -15,7 +15,7 @@ export class GameComponent implements OnInit{
   currentCard: string = '';
   game: Game = new Game();
   stack: string[] = [];
-  topCardStyleRight = 260;
+  topCardStyleRight = 156;
 
 
   constructor(public dialog: MatDialog) { }
@@ -55,7 +55,7 @@ export class GameComponent implements OnInit{
         this.game.currentPlayer++;
         this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
 
-        this.topCardStyleRight -= 5;
+        this.topCardStyleRight -= 3;
         setTimeout(() => {
           this.game.playedCards.push(this.currentCard);
           this.pickCardAnimation = false;

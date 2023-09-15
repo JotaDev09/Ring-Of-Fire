@@ -7,3 +7,10 @@
     font-size: 20px;
     color: #2A2979;
 }
+
+
+@media (width < 700px) {
+  .card-design {
+    border-radius: 0;
+  }
+}

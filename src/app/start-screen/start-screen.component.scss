@@ -55,3 +55,31 @@
         background-color: #FA8210;
     }
 }
+
+@media (width < 900px) {
+  .start_img_contain {
+    justify-content: space-between;
+    height: -webkit-fill-available;
+  }
+
+  .start_title {
+    margin-top: 50px;
+  }
+
+  .start_game {
+    margin-bottom: 50px;
+  }
+}
+
+
+@media (width < 500px) {
+  .start_title {
+    font-size: 50px;
+  }
+}
+
+@media (width < 350px) {
+  .start_title {
+    font-size: 40px;
+  }
+}
