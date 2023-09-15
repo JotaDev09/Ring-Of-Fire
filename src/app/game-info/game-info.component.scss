@@ -1,13 +1,12 @@
 .card-design {
-    padding:15px;
-    gap: 10px;
-    border-radius: 15px;
+  padding: 15px;
+  gap: 10px;
+  border-radius: 15px;
 }
 .card-title {
-    font-size: 20px;
-    color: #2A2979;
+  font-size: 20px;
+  color: #2a2979;
 }
-
 
 @media (width < 700px) {
   .card-design {

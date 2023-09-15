@@ -4,16 +4,14 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-dialog-add-player',
   templateUrl: './dialog-add-player.component.html',
-  styleUrls: ['./dialog-add-player.component.scss']
+  styleUrls: ['./dialog-add-player.component.scss'],
 })
 export class DialogAddPlayerComponent implements OnInit {
   name: string = '';
 
-  constructor(public dialogRef: MatDialogRef<DialogAddPlayerComponent>) { 
-  }
+  constructor(public dialogRef: MatDialogRef<DialogAddPlayerComponent>) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onNoClick(): void {
     this.dialogRef.close();
