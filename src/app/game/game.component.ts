@@ -84,5 +84,9 @@ shuffleArray(array: any[]): any[] {
   return shuffledArray;
 }
 
+editPlayer() {
+  console.log('edit player');
+}
+
 
 }

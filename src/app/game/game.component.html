@@ -1,8 +1,9 @@
-<app-player *ngFor="let player of game.players; let i = index" [ngStyle]="{'top.px': 100 + (i * 80)}" [name]="player"
-  [playerActive]="i == game.currentPlayer" class="player-position hide-mobile"></app-player>
+<app-player (click)="editPlayer()" *ngFor="let player of game.players; let i = index"
+  [ngStyle]="{'top.px': 100 + (i * 80)}" [name]="player" [playerActive]="i == game.currentPlayer"
+  class="player-position hide-mobile"></app-player>
 
 <div class="scroll-container hide-desktop">
-  <app-player-mobile *ngFor="let player of game.players; let i = index" [name]="player"
+  <app-player-mobile (click)="editPlayer()" *ngFor="let player of game.players; let i = index" [name]="player"
     [playerActive]="i == game.currentPlayer"></app-player-mobile>
 </div>
 
