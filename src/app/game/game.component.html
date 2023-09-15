@@ -13,7 +13,7 @@
     <img *ngFor="let card of game.playedCards" class="played-card" src="assets/cards/{{ card }}.png">
 
     <!-- Current Card-->
-    <img (click)="takeCard()" *ngIf="pickCardAnimation" class="pick-card" [ngStyle]="{'right.px': topCardStyleRight}"
+    <img (click)="takeCard()" *ngIf="pickCardAnimation" class="pick-card" [ngStyle]="{'right.px': 260}"
       src="assets/cards/{{ currentCard }}.png">
 
   </div>
